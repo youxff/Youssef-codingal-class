@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L09 My superhero card</title>
+
+        <!--internal CSS-->
+        <style>
+            /* Typography - font, size, weight, colour for the whole page */
+            body {
+                background-color: darkblue;
+                color: white;
+                font-family: Arial, sans-serif ;
+            }
+
+            /* Typography + Text shadow - big bold title with an orange shadow */
+            .hero-name {
+                font-size: 60px;
+                font-weight: bold;
+                color: yellow;
+                text-shadow: 5px 5px orange;
+            }
+
+            /* Typography + text transform - tagline becomes Title case*/
+            .tagline {
+                font-style: italic;
+                color: lightblue;
+                text-transform: capitalize;
+            }
+
+            /* text transform + text decoration - section headings in CAPS with underline*/
+            .label {
+                text-transform: uppercase;
+                text-decoration: underline;
+                color: coral;
+            }
+
+            /* typography - powers stand out in bold green*/
+            .power {
+                font-weight: bold;
+                color: lightgreen;
+            }
+
+            /* text decoration - weakness are crossed out */
+            .weakness {
+                text-decoration: line-through;
+                color: gray;
+            }
+
+            /* transform - the badge is tilted to the side */
+            .badge {
+                font-size: 28px;
+                font-weight: bold;
+                color: gold;
+                transform: rotate(15deg);
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="hero-name">Thunder kid</h1>
+        <p class="tagline">The most powerful hero in the school</p>
+
+        <h2 class="label"> super powers</h2>
+        <p class="power">Can run faster than a cheetah</p>
+        <p class="power">Can lift a school bus</p>
+
+        <h2 class="label">weakness</h2>
+        <p class="weakness">Math homework</p>
+        <p class="weakness">Broccoli</p>
+
+        <p class="badge">Top Hero</p>
+
+        <p class="made-by">Created by Youssef Elshafei</p>
+    </body>
+</html>
