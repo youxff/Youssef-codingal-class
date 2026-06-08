@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L10 HW My Ice Cream Shop Menu</title>
+
+        <style>
+            body {
+                font-family: Arial;
+                background-color: #48d5e5;
+                padding: 30px;
+                text-align: center;
+            }
+
+            h1 { color: #e65c00;}
+
+            /*sibling selector - styles the paragraph right after h1 */
+            h1, p {
+                background: #169fc4;
+                padding: 10px 20px;
+                border-radius: 8px;
+                color: #3159de;
+                display: inline-block;
+            }
+
+            ul { padding: 0; margin: 20px;}
+
+            /* Child selector - styles only direct li children or ul */
+            ul > li {
+                list-style: none;
+                font-size: 18px;
+                font-weight: bold;
+                color: #2c71e9;
+                padding: 10px 20px;
+                margin: 6px auto;
+                width: 260px;
+                background: #409edd;
+                border-radius: 8px;
+            }
+
+            /* nth-child - highlights the 3rd item as chef's special */
+            ul li:nth-child(3) {
+                background: #409edda0;
+                color: #32e1e7;
+            }
+
+            .desc {
+                color: #555;
+                margin-top: 20px;
+                font-size: 15px;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            /* first-letter - makes the first letter big and bold*/
+            .desc::first-letter {
+                font-size: 220%;
+                color: #61bde8a6;
+                font-weight: bold;
+            }
+
+            .link {margin-top: 25px;}
+
+            /* hover effect - links glow when mouse moves over them*/
+            a {
+                color: #1fa8de;
+                text-decoration: none;
+                font-size: 15px;
+                margin: 0 12px;
+                padding: 8px 18px;
+                border: 2px solid #00e2e6;
+                border-radius: 8px;
+            }
+
+            a:hover {
+                background: #14bcda;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+         <h1>My Ice-Cream Menu</h1>
+        <p>Pick your favorite Flavour and dig in!</p>
+
+        <ul>
+            <li>Choclate</li>
+            <li>Strawberry</li>
+            <li>cookies and cream - our ice-cream special flavour</li>
+            <li>Mango</li>
+            <li>Vanilla</li>
+        </ul>
+
+        <p class="desc">
+            Every ice-cream flavour on this menu is made with love. Try them all and find your favourite flavour of ice-cream!
+        </p>
+
+        <div class="links">
+            <a href="#">Order Now</a>
+            <a href="#">See More</a>
+        </div>
+    </body>
+</html>
