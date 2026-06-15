@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L12 HW Zoo Rescue Tracker</title>
+
+        <!--internal CSS-->
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: rgb(20, 241, 8);
+                padding: 65px 30px 30px 30px;
+                min-height: 1800px;
+            }
+
+            h1, h2 { color: rgb(191, 255, 0); }
+
+            .top-bar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background-color: rgb(0, 255, 60);
+                color: white;
+                padding: 14px 20px;
+            }
+
+            .list-item {
+                background-color: white;
+                border: 2px solid darkorange;
+                padding: 10px 20px;
+                margin: 5px 0;
+            }
+
+            .special-note {
+                position: relative;
+                left: 30px;
+                background-color: rgb(0, 187, 255);
+                padding: 10px 20px;
+            }
+
+            .pet-card {
+                position: relative;
+                background-color: rgb(172, 221, 179);
+                border: 3px solid rgb(0, 162, 255);
+                padding: 15px 25px;
+            }
+
+            .badge {
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                background-color: forestgreen;
+                color: white;
+                padding: 4px 8px;
+            }
+
+            .section-label {
+                position: sticky;
+                top: 55px;
+                background-color: rgb(0, 119, 255);
+                color: white;
+                padding: 10px 20px;
+                margin: 15px 0 8px;
+            }
+        </style>
+    </head>
+    <body>
+         <div class="top-bar">Zoo rescue tracker</div>
+        <h1>Meet the animals</h1>
+
+        <h2>Static</h2>
+        <div class="list-item">these are the animals we have saved</div>
+        <div class="list-item">crocadile, panda, jaguar, lion, komodo dragon, giraffe and monkey</div>
+
+        <h2>Relative</h2>
+        <p>This note shifts right from its normal spot.</p>
+        <div class="special-note">the animal we have saved this month</div>
+
+        <h2>Absolute</h2>
+        <p>The badge is pinned to the corner of the card</p>
+        <div class="pet-card">
+            <p>monkey</p>
+            <div class="badge">youve saved another animal</div>
+        </div>
+
+        <h2>Sticky</h2>
+        <p>Scroll down - the label locks at the top!</p>
+        <div class="section-label">The zoo animals we have saved</div>
+        <div class="list-item">crocadile</div>
+        <div class="list-item">panda</div>
+        <div class="list-item">jaguar</div>
+
+        <div class="list-item">lion</div>
+        <div class="list-item">komodo dragon</div>
+        <div class="list-item">giraffe</div>
+
+    </body>
+</html>
