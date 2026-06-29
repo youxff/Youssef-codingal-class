@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L16 HW My Study Progress Dashboard</title>
+
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+          <style>
+            body {
+                background-color: white;
+                font-family: Arial, sans-serif;
+            }
+
+            .jumbotron {
+                background-color: white;
+                border-left: 6px solid red;
+                margin-bottom: 25px;
+            }
+
+            .jumbotron h1{
+                color: red;
+            }
+
+            .section-title {
+                color: red;
+                margin-top: 30px;
+                margin-bottom: 15px;
+            }
+
+            p {
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+        </style>
+    </head>
+    <body>
+         <!-- TOPIC 1: JUMBOTRON -->
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1>My Study progress</h1>
+
+                <p class="lead">
+                    Welcome! Here are the subjects i have studied so far, the discoveries made, and how far each research project has come in these subjects.
+                </p>
+
+                <!-- TOPIC 2: BUTTONS -->
+                <button class="btn btn-primary">English</button>
+                <button class="btn btn-success">Math</button>
+                <button class="btn btn-warning">Music</button>
+                <button class="btn btn-danger">Arabic</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- TOPIC 3: BADGES -->
+            <h2 class="section-title">
+                Study sessions Completed <span class="badge badge-danger">24</span>
+            </h2>
+
+            <p>English <span class="badge badge-primary">9 study sessions</span></p>
+            <p>Maths <span class="badge badge-success">7 study sessions</span></p>
+            <p>Music <span class="badge badge-warning">5 study sessions</span></p>
+            <p>Arabic <span class="badge badge-info">3 study sessions</span></p>
+
+            <!-- TOPIC 4: PROGRESS BARS -->
+            <h2 class="section-title">Research Progress</h2>
+
+            <p>English</p>
+            <div class="progress mb-3">
+                <div class="progress-bar bg-primary" style="width:85%;">85%</div>
+            </div>
+
+            <p>Math</p>
+            <div class="progress mb-3">
+                <div class="progress-bar bg-success" style="width:70%;">70%</div>
+            </div>
+
+            <p>Music</p>
+            <div class="progress mb-3">
+                <div class="progress-bar bg-warning" style="width:55%;">55%</div>
+            </div>
+
+            <p>Arabic</p>
+            <div class="progress mb-3">
+                <div class="progress-bar bg-danger" style="width:40%;">40%</div>
+            </div>
+        </div>
+          
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </body>
+</html>
