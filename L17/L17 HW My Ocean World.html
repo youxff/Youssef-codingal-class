@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L17 HW My Ocean World</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <style>
+            body {
+                background-color: #075beb;
+            }
+
+            .navbar {
+                background-color: #1a237e;
+            }
+
+            .navbar-brand, .nav-link {
+                color: #0892ee !important;
+            }
+
+            .section-title {
+                color: #1a237e;
+                margin: 20px 0 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- TOPIC 3: NAVIGATION BAR -->
+       <nav class="navbar navbar-expand-sm">
+            <a class="navbar-brand" href="#">Planet Explorer</a>
+
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Oceans</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Ocean Life</a></li>
+            </ul>
+       </nav>
+
+       <div class="container mt-4">
+            <!-- TOPIC 1: SPINNERS -->
+            <h4 class="section-title">Scanning the Ocean...</h4>
+            <div class="spinner-border text-success" role="status"></div>
+            <div class="spinner-border text-warning" role="status"></div>
+            <div class="spinner-border text-danger" role="status"></div>
+
+            <!-- TOPIC 2: CARDS -->
+            <h4 class="section-title">Featured Oceans</h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Indian Ocean</h5>
+                            <p class="card-text">
+                                The third-largest ocean, bordered by Africa, Asia, Australia, and the Indian subcontinent!
+                            </p>
+                            <a href="#" class="btn btn-success">Explore</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Atlantic Ocean</h5>
+                            <p class="card-text">
+                                The second-largest ocean, known for its significant role in global trade and exploration!
+                            </p>
+                            <a href="#" class="btn btn-warning">Explore</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Pacific Ocean</h5>
+                            <p class="card-text">
+                                The largest and deepest ocean, covering more area than all the landmasses combined!
+                            </p>
+                            <a href="#" class="btn btn-danger">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOPIC 4: PAGINATION -->
+            <h4 class="section-title">Browse More Oceans</h4>
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+       </div>
+
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </body>
+</html>
