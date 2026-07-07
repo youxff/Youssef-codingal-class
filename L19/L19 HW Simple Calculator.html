@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L19 HW Simple Calculator</title>
+    </head>
+    <body>
+        <h1>Simple Calculater</h1>
+        <p>multipication, subtraction, addition, and divition</p>
+
+         <p id="demo"></p>
+
+        <h2>Simple Math Calculator</h2>
+
+    <label>Enter first number:</label>
+    <input type="number" id="num1"><br><br>
+
+    <label>Enter second number:</label>
+    <input type="number" id="num2"><br><br>
+
+    <button onclick="add()">Addition</button>
+    <button onclick="subtract()">Subtraction</button>
+    <button onclick="multiply()">Multiplication</button>
+    <button onclick="divide()">Division</button>
+
+    <h3>Result: <span id="result"></span></h3>
+
+    <script>
+        function add() {
+            let a = Number(document.getElementById("num1").value);
+            let b = Number(document.getElementById("num2").value);
+            document.getElementById("result").innerText = a + b;
+        }
+
+        function subtract() {
+            let a = Number(document.getElementById("num1").value);
+            let b = Number(document.getElementById("num2").value);
+            document.getElementById("result").innerText = a - b;
+        }
+
+        function multiply() {
+            let a = Number(document.getElementById("num1").value);
+            let b = Number(document.getElementById("num2").value);
+            document.getElementById("result").innerText = a * b;
+        }
+
+        function divide() {
+            let a = Number(document.getElementById("num1").value);
+            let b = Number(document.getElementById("num2").value);
+
+            if (b === 0) {
+                document.getElementById("result").innerText = "Cannot divide by zero";
+            } else {
+                document.getElementById("result").innerText = a / b;
+            }
+        }
+    </script>
+    </body>
+</html>
