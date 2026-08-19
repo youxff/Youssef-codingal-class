@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L23 HW Object Data Structure and Array</title>
+    </head>
+    <body>
+        <h2>JavaScript Objects Data Structure and Arrays</h2>
+
+        <script>
+// ------------------------------
+// Grade 9 JavaScript Homework
+// Objects, Arrays & Data Structures
+// ------------------------------
+
+//  BASIC OBJECT
+let student = {
+    name: "Youssef",
+    age: 13,
+    grade: 9,
+    isPresent: true
+};
+
+console.log("Student Object:");
+console.log(student);
+document.write("<h3>Student Name: " + student.name + "</h3>");
+
+
+//  UPDATING OBJECT
+student.age = 14; // update value
+student.hobby = "Coding"; // add new property
+
+document.write("<p>Updated Age: " + student.age + "</p>");
+document.write("<p>Hobby: " + student.hobby + "</p>");
+
+
+//  BASIC ARRAY
+let subjects = ["Math", "Science", "History", "ICT"];
+
+document.write("<h3>Subjects:</h3>");
+document.write(subjects.join(", ") + "<br>");
+
+
+//  MODIFYING ARRAYS
+subjects.push("PE"); // add item
+subjects.pop();      // remove last item
+subjects[1] = "Chemistry"; // replace item
+
+document.write("<p>Updated Subjects: " + subjects.join(", ") + "</p>");
+
+
+//  ARRAY OF OBJECTS (DATA STRUCTURE)
+let classList = [
+    { name: "Youssef", grade: 9 },
+    { name: "Omar", grade: 9 },
+    { name: "Sara", grade: 9 }
+];
+
+document.write("<h3>Class List:</h3>");
+for (let i = 0; i < classList.length; i++) {
+    document.write("<p>Student: " + classList[i].name + 
+                   " | Grade: " + classList[i].grade + "</p>");
+}
+
+
+//  MINI DATA STRUCTURE EXAMPLE
+let school = {
+    name: "BIS-R Al Waha",
+    students: classList,
+    subjects: subjects
+};
+
+document.write("<h3>School Name: " + school.name + "</h3>");
+document.write("<p>First Student: " + school.students[0].name + "</p>");
+document.write("<p>First Subject: " + school.subjects[0] + "</p>");
+
+</script>
+
+    </body>
+</html>
