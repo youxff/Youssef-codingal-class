@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L24 HW My Digital Zoo Manager</title>
+
+        <style>
+            body {
+                font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                background-color: lightblue;
+                text-align: center;
+                padding: 30px;
+            }
+
+            h1 {
+                color: red;
+            }
+
+            #zoo {
+                border: 2px solid red;
+                width: 300px;
+                margin: 16px auto;
+                padding: 12px;
+                border-radius: 10px;
+                background: white;
+            }
+
+            .zone {
+                border: 1px solid red;
+                margin: 6px 0;
+                padding: 8px 12px;
+                border-radius: 6px;
+                text-align: left;
+            }
+
+            button {
+                background-color: red;
+                color: white;
+                padding: 10px 24px;
+                border: none;
+                border-radius: 20px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+      <h1>My Digital Zoo</h1>
+        <p>Use JavaScript and the DOM to add animals to each cage!</p>
+
+        <!--
+        DOM Tree: zoo is the parent element node.
+        Zone divs are child element nodes. Animal names inside each span are text nodes.
+        -->
+        <div id="zoo">
+            <div class="zone">Zone 1: <span id="zone1"></span></div>
+            <div class="zone">Zone 2: <span id="zone2"></span></div>
+            <div class="zone">Zone 3: <span id="zone3"></span></div>
+            <div class="zone">Zone 4: <span id="zone4"></span></div>
+            <div class="zone">Zone 5: <span id="zone5"></span></div>
+            <div class="zone">Total Animals: <span id="total"></span></div>
+        </div>
+
+        <br>
+
+        <button onclick="openZoo()">Open the Zoo!</button>
+
+        <p id="zoo-status"></p>
+
+        <script>
+            function openZoo() {
+
+                /* Task 1: Add your first animal to Zone 1 */
+                document.getElementById("zone1").innerHTML = "Lion";
+
+                /* Task 2: Add your second animal to Zone 2 */
+                document.getElementById("zone2").innerHTML = "Elephant";
+
+                /* Task 3: Add your third animal to Zone 3 */
+                document.getElementById("zone3").innerHTML = "Penguin";
+
+                /* Task 4: Add your fourth animal to Zone 4 */
+                document.getElementById("zone4").innerHTML = "komodo dragon";
+
+                /* Task 5: Add your fifth animal to Zone 5 */
+                document.getElementById("zone5").innerHTML = "cheetah";
+
+                /* Task 6: Show the total number of animals */
+                document.getElementById("total").innerHTML = "5";
+
+                /* Task 7: Change the zoo background colour */
+                document.getElementById("zoo").style.backgroundColor = "lightgreen";
+
+                /* Task 8: Use the document object to show the page */
+                document.getElementById("zoo-status").innerHTML = document.title + " is now open!";
+
+            }
+
+        </script>  
+    </body>
+</html>
