@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L25 HW My Birthday Countdown Checker</title>
+
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            text-align: center;
+            padding-top: 80px;
+        }
+        #countdown {
+            font-size: 2rem;
+            margin-top: 20px;
+            color: #333;
+        }
+        input {
+            padding: 10px;
+            font-size: 1rem;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    </style>
+    </head>
+    <body>
+
+    <h1> Birthday Countdown Checker</h1>
+
+    <p>Enter your birthday:</p>
+    <input type="date" id="birthdayInput">
+    <button onclick="startCountdown()">Start Countdown</button>
+
+    <div id="countdown"></div>
+
+    <script>
+        function startCountdown() {
+            const birthdayInput = document.getElementById("birthdayInput").value;
+            if (!birthdayInput) {
+                alert("Please enter your birthday!");
+                return;
+            }
+
+            const today = new Date();
+            const birthday = new Date(birthdayInput);
+
+            // Set birthday year to this year
+            birthday.setFullYear(today.getFullYear());
+
+            // If birthday passed this year → use next year
+            if (birthday < today) {
+                birthday.setFullYear(today.getFullYear() + 1);
+            }
+
+            function updateCountdown() {
+                const now = new Date();
+                const diff = birthday - now;
+
+                if (diff <= 0) {
+                    document.getElementById("countdown").innerHTML = "🎉 Happy Birthday!";
+                    return;
+                }
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((diff / (1000 * 60)) % 60);
+                const seconds = Math.floor((diff / 1000) % 60);
+
+                document.getElementById("countdown").innerHTML =
+                    `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
+    </script>
+    </body>
+</html>
