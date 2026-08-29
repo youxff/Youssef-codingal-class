@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L26 HW My Superhero Power Cards</title>
+
+        <!--internal CSS-->
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background: whitesmoke;
+                padding: 30px;
+                text-align: center;
+            }
+
+            h1 {
+                color: red;
+            }
+
+            p {
+                color: #777;
+            }
+
+            .cards {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                margin-top: 25px;
+            }
+
+            .card {
+                background: white;
+                border: 3px solid red;
+                border-radius: 12px;
+                padding: 20px;
+                width: 200px;
+            }
+
+            .superhero-name {
+                color: #888;
+                margin-top: 10px;
+                font-size: 14px;
+            }
+
+            .superhero-fact {
+                color: #888;
+                margin-top: 10px;
+                font-size: 14px;
+            }
+
+            button {
+                background: red;
+                color: white;
+                border: none;
+                padding: 12px 28px;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 16px;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>My Superhero Power Cards</h1>
+        <p>Use a JavaScript class to build Superhero Power cards!</p>
+
+        <button onclick="showSuperpower()">Show Superpowers!</button>
+
+        <div class="cards">
+            <div id="card1"></div>
+            <div id="card2"></div>
+            <div id="card3"></div>
+            <div id="card4"></div>
+            <div id="card5"></div>
+        </div>
+
+        <script>
+            class Superpower {
+                constructor(nm, fct) {
+                    this.name = nm;
+                    this.fact = fct;
+                }
+
+                describe() {
+                    return this.name + ": " + this.fact;
+                }
+            }
+
+            function showSuperpower() {
+                let p1 = new Superpower("invisibility", "makes you unseeable and camaflouge with your suroundings");
+                let p2 = new Superpower("flight", "makes you be able to fly around to heights maybe never seen before");
+                let p3 = new Superpower("teleportation", "be able to go anywhere with a thought");
+                let p4 = new Superpower("superspeed", "be able to reach places miles away in seconds");
+                let p5 = new Superpower("telekanesis", "using your mind to be able to move stuff");
+
+                document.getElementById("card1").innerHTML = 
+                    "<div class='card'><div class='superhero-name'>" + p1.name + "</div>" +
+                    "<div class='superhero-fact'>" + p1.describe() + "</div></div>";
+
+                document.getElementById("card2").innerHTML = 
+                    "<div class='card'><div class='superhero-name'>" + p2.name + "</div>" +
+                    "<div class='superhero-fact'>" + p2.describe() + "</div></div>";
+
+                document.getElementById("card3").innerHTML = 
+                    "<div class='card'><div class='superhero-name'>" + p3.name + "</div>" +
+                    "<div class='superhero-fact'>" + p3.describe() + "</div></div>";
+                
+                document.getElementById("card4").innerHTML = 
+                    "<div class='card'><div class='superhero-name'>" + p4.name + "</div>" +
+                    "<div class='superhero-fact'>" + p4.describe() + "</div></div>";
+
+                document.getElementById("card5").innerHTML = 
+                    "<div class='card'><div class='superhero-name'>" + p5.name + "</div>" +
+                    "<div class='superhero-fact'>" + p5.describe() + "</div></div>";
+            }
+        </script>
+    </body>
+</html>
