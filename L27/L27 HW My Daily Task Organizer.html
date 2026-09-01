@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daily Task Organizer</title>
+
+    <!-- Bootstrap 4.3.1 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background: #f8f9fa;
+            padding-top: 40px;
+        }
+        .task-item {
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+        .priority-high { border-left: 6px solid #dc3545; }
+        .priority-medium { border-left: 6px solid #ffc107; }
+        .priority-low { border-left: 6px solid #28a745; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 class="text-center mb-4">📅 Daily Task Organizer</h2>
+
+    <!-- Input Section -->
+    <div class="card p-3 mb-4">
+        <div class="form-row">
+            <div class="col-md-6">
+                <input id="taskInput" type="text" class="form-control" placeholder="Enter a task">
+            </div>
+
+            <div class="col-md-3">
+                <select id="prioritySelect" class="form-control">
+                    <option value="low">Low Priority</option>
+                    <option value="medium">Medium Priority</option>
+                    <option value="high">High Priority</option>
+                </select>
+            </div>
+
+            <div class="col-md-3">
+                <button class="btn btn-primary btn-block" onclick="addTask()">Add Task</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Task List -->
+    <div id="taskList"></div>
+</div>
+
+<!-- JavaScript -->
+<script>
+    // Load tasks on startup
+    document.addEventListener("DOMContentLoaded", loadTasks);
+
+    function addTask() {
+        const taskText = document.getElementById("taskInput").value;
+        const priority = document.getElementById("prioritySelect").value;
+
+        if (taskText.trim() === "") {
+            alert("Please enter a task");
+            return;
+        }
+
+        const task = {
+            text: taskText,
+            priority: priority
+        };
+
+        saveTask(task);
+        displayTask(task);
+        document.getElementById("taskInput").value = "";
+    }
+
+    function displayTask(task) {
+        const taskList = document.getElementById("taskList");
+
+        const div = document.createElement("div");
+        div.className = `task-item priority-${task.priority} bg-white shadow-sm`;
+
+        div.innerHTML = `
+            <div class="d-flex justify-content-between align-items-center">
+                <span>${task.text}</span>
+                <button class="btn btn-danger btn-sm" onclick="deleteTask(this)">Delete</button>
+            </div>
+        `;
+
+        taskList.appendChild(div);
+    }
+
+    function deleteTask(button) {
+        const taskDiv = button.parentElement.parentElement;
+        const text = taskDiv.querySelector("span").innerText;
+
+        removeTaskFromStorage(text);
+        taskDiv.remove();
+    }
+
+    function saveTask(task) {
+        let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+        tasks.push(task);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    function loadTasks() {
+        let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+        tasks.forEach(task => displayTask(task));
+    }
+
+    function removeTaskFromStorage(text) {
+        let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+        tasks = tasks.filter(t => t.text !== text);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+</script>
+</body>
+</html>
