@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Fixer Tool</title>
+
+    <!-- Bootstrap 4.3.1 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            background: #eef2f5;
+            padding-top: 40px;
+        }
+        .container {
+            max-width: 800px;
+        }
+        .card {
+            border-radius: 12px;
+        }
+        #output {
+            min-height: 150px;
+            background: #ffffff;
+            border: 2px solid #007bff;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 1.1rem;
+        }
+        .counter-box {
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="card shadow-lg p-4">
+        <h3 class="text-center mb-4">Text Fixer Tool</h3>
+
+        <div class="form-group">
+            <label><strong>Enter your text:</strong></label>
+            <textarea id="inputText" class="form-control" rows="6" placeholder="Type or paste text here..." oninput="updateCounter()"></textarea>
+        </div>
+
+        <div class="counter-box mb-3">
+            <span id="wordCount">Words: 0</span> |
+            <span id="charCount">Characters: 0</span>
+        </div>
+
+        <button class="btn btn-primary btn-block mb-3" onclick="fixText()">Fix Text</button>
+
+        <h5><strong>Output:</strong></h5>
+        <div id="output"></div>
+    </div>
+</div>
+
+<!-- Internal Script -->
+<script>
+    function updateCounter() {
+        let text = document.getElementById("inputText").value;
+        let words = text.trim().length ? text.trim().split(/\s+/).length : 0;
+        let chars = text.length;
+
+        document.getElementById("wordCount").innerText = "Words: " + words;
+        document.getElementById("charCount").innerText = "Characters: " + chars;
+    }
+
+    function fixText() {
+        let text = document.getElementById("inputText").value;
+
+        // Convert ALL CAPS to normal text
+        if (text === text.toUpperCase()) {
+            text = text.toLowerCase();
+        }
+
+        // Basic cleaning
+        let fixed = text
+            .trim()
+            .replace(/\s+/g, " ")             // collapse multiple spaces
+            .replace(/ ,/g, ",")              // fix space before commas
+            .replace(/ \./g, ".")             // fix space before periods
+            .replace(/ \!/g, "!")             // fix space before exclamation
+            .replace(/ \?/g, "?")             // fix space before question mark
+            .replace(/([,.!?]){2,}/g, "$1")   // remove double punctuation
+            .replace(/\bi\b/g, "I");          // capitalize "i" alone
+
+        // Auto-capitalize sentences
+        fixed = fixed.replace(/(^\w|\.\s+\w)/g, function(match) {
+            return match.toUpperCase();
+        });
+
+        document.getElementById("output").innerText = fixed;
+    }
+</script>
+
+</body>
+</html>
