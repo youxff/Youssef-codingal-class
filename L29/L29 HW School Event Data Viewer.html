@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>School Event Data Viewer</title>
+
+    <!-- INTERNAL CSS -->
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #eventList {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            width: 40%;
+            float: left;
+        }
+
+        #eventDetails {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            width: 50%;
+            float: right;
+        }
+
+        .event-item {
+            padding: 10px;
+            margin: 5px 0;
+            background: #e3e3ff;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .event-item:hover {
+            background: #c5c5ff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>School Event Data Viewer</h1>
+
+    <!-- EVENT LIST -->
+    <div id="eventList">
+        <h2>Events</h2>
+        <div id="eventsContainer"></div>
+    </div>
+
+    <!-- EVENT DETAILS -->
+    <div id="eventDetails">
+        <h2>Event Details</h2>
+        <p id="detailsText">Click an event to view details.</p>
+    </div>
+
+    <!-- INTERNAL SCRIPT -->
+    <script>
+        // Event Data (Array of Objects)
+        let events = [
+            {
+                name: "Science Fair",
+                date: "2026-10-12",
+                location: "Main Hall",
+                description: "Students present science projects and experiments."
+            },
+            {
+                name: "Sports Day",
+                date: "2026-11-05",
+                location: "School Field",
+                description: "Track races, football matches, and team competitions."
+            },
+            {
+                name: "Art Exhibition",
+                date: "2026-12-01",
+                location: "Art Room",
+                description: "Display of student drawings, paintings, and sculptures."
+            }
+        ];
+
+        // Display Event List
+        let container = document.getElementById("eventsContainer");
+
+        events.forEach((event, index) => {
+            let div = document.createElement("div");
+            div.className = "event-item";
+            div.innerHTML = event.name;
+            div.onclick = function() {
+                showDetails(index);
+            };
+            container.appendChild(div);
+        });
+
+        // Show Event Details
+        function showDetails(index) {
+            let event = events[index];
+            document.getElementById("detailsText").innerHTML =
+                "<strong>Name:</strong> " + event.name + "<br>" +
+                "<strong>Date:</strong> " + event.date + "<br>" +
+                "<strong>Location:</strong> " + event.location + "<br>" +
+                "<strong>Description:</strong> " + event.description;
+        }
+    </script>
+
+</body>
+</html>
