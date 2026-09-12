@@ -6,6 +6,21 @@
         <title>L28 My Magic Word Lab</title>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <style>
+            body {
+                background: lightyellow;
+            }
+
+            h1, h3 {
+                color: darkorange;
+            }
+
+            .box {
+                background: white;
+                color: darkorange;
+            }
+        </style>
     </head>
     <body>
         <div class="container py-4">
@@ -95,6 +110,35 @@
                 var v = document.getElementById("numIn").value;
 
                 document.getElementById("convResult").innerHTML = "Number(" + v + ") = '" + Number(v) + "' - now it is a: " + typeof Number(v);
+            }
+
+            function doSearch() {
+                var w = document.getElementById("findW").value;
+                var p = sen.search(w);
+
+                document.getElementById("srResult").innerHTML = p === -1 ? "'" + w + "' is not in the sentence - try another word!" : "Found '" + w + "'hiding at position " + p + "!";
+            }
+
+            function doReplace() {
+                var w = document.getElementById("findW").value;
+
+                document.getElementById("srResult").innerHTML = "New sentence: " + sen.replace(w, document.getElementById("swapW").value);
+            }
+
+            function trySafe() {
+                try{
+                    var n = document.getElementById("divIn").value;
+
+                    if (n === "" || isNaN(n)) {
+                        throw "That is not a number - you caught an error!";
+                    }
+
+                    document.getElementById("errResult").innerHTML = "100 / " + n + " = " + (100 / Number(n)) + " - well done!"
+                }
+
+                catch(err) {
+                    document.getElementById("errResult").innerHTML = "Error caught: " + err;
+                }
             }
         </script>
     </body>
