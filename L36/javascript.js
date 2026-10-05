@@ -52,7 +52,7 @@ for(var i=0;i<operator.length;i++){
 
         else{
             var output = getOutput();
-            var history = getHistory
+            var history = getHistory();
 
             if(output==""&& history !=""){
                 if(isNaN(history[history.length-1])){
